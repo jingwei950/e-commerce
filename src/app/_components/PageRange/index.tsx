@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import classes from './index.module.scss'
 
@@ -41,7 +41,7 @@ export const PageRange: React.FC<{
   if (totalDocs && indexEnd > totalDocs) indexEnd = totalDocs
 
   const { plural, singular } =
-    collectionLabelsFromProps || defaultCollectionLabels[collection || ''] || defaultLabels || {}
+    collectionLabelsFromProps || defaultCollectionLabels.posts || defaultLabels || {}
 
   return (
     <div className={[className, classes.pageRange].filter(Boolean).join(' ')}>
